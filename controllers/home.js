@@ -10,7 +10,7 @@ module.exports = function(app) {
                var usuario = req.body.usuario;
                usuario['contatos'] = [];
                req.session.usuario = usuario;
-               res.redirect('views/home/contatos');
+               res.redirect('/contatos');
             }else{
                 res.redirect('/');
             }
