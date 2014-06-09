@@ -5,8 +5,9 @@ module.exports = function(app) {
 	  },
 	    login: function(req, res){
             var email = req.body.usuario.email,
-            nome =req.body.usuario.nome;
-            if(email && nome){
+            nome =req.body.usuario.nome,
+            senha = req.body.usuario.senha;
+            if(email && nome && senha){
                var usuario = req.body.usuario;
                usuario['contatos'] = [];
                req.session.usuario = usuario;

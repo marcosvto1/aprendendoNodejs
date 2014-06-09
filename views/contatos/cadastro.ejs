@@ -1,15 +1,12 @@
  <% include ../header %>
-		
 
-		
-<div class="row">
+       <div class="row">
     <div class="large-6 columns">
       <div class="signup-panel">
                      <header>
-			    	  <h1>Ntalks</h1>
-				      <h4>Bem-vindo!</h4>
+			    	  <h1>Cadastro</h1>				      
 			       </header>
-        <form action="/entrar" method="post">
+        <form action="/salvar" method="post">
           <div class="row collapse">
             <div class="small-2  columns">
               <span class="prefix"><i class="fi-torso-female"></i></span>
@@ -34,11 +31,14 @@
              <input type="password" name="usuario[senha]" placeholder="Sua senha">
             </div>
           </div>
-          <button type="submit">Entrar</button>
+          <button type="submit">Salvar</button>
         </form>
         
           
       </div>
     </div>
-   </div>        
-<% include ../footer %></div>
+   </div>        	
+
+ <% include ../footer %></div>
+   
+
