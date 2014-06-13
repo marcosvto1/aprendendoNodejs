@@ -2,7 +2,7 @@
 		
 
 		
-<div class="row">
+ <!--<div class="row">
     <div class="large-6 columns">
       <div class="signup-panel">
                      <header>
@@ -40,5 +40,18 @@
           
       </div>
     </div>
-   </div>        
+   </div>     -->
+ 
+
+<div class="container">
+  <form class="form-signin" action="/entrar" method="post">       
+      <h1 class="form-signin-heading">Zuera Mile Grau's</h1>
+      <input type="text" class="form-control" name="usuario[nome]" placeholder="user" required="" autofocus="" />
+      <input type="password" class="form-control" name="usuario[senha]" placeholder="Password" required=""/>   
+      
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+    </form>
+  <p class="text-center sign-up"><strong>Sign up</strong> criar uma contao na zuera</p>
+</div> 
+
 <% include ../footer %></div>
