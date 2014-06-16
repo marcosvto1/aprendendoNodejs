@@ -1,44 +1,278 @@
- <% include ../header %>
+ <html>
+     <head>
+          <meta charset="utf-8">
+         <title>Ntalk - Agenda de contatos</title>
+        <!-- <link rel='stylesheet' href='public/css/foundation.css'>
+         <link rel="stylesheet" href="public/css/normalize.css">-->
+        <link rel="stylesheet" href="public/bootstrap-3.1.1-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="public/bootstrap-3.1.1-dist/css/bootstrap-theme.css">
+        <script src="public/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script> 
 
-       <div class="row">
-    <div class="large-6 columns">
-      <div class="signup-panel">
-                     <header>
-			    	  <h1>Cadastro</h1>				      
-			       </header>
-        <form action="/salvar" method="post">
-          <div class="row collapse">
-            <div class="small-2  columns">
-              <span class="prefix"><i class="fi-torso-female"></i></span>
-            </div>
-            <div class="small-10  columns">
-                <input type="text" name="usuario[nome]" placeholder="Seu nome">
-            </div>
+          <style>
+                 .signup-panel {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 30px;
+}
+.signup-panel i {
+  font-size: 30px;
+  line-height: 50px;
+  color: #999;
+}
+.signup-panel form input, .signup-panel form span {
+  height: 50px;
+}
+.signup-panel .welcome {
+  font-size: 26px;
+  text-align: center;
+  margin-left: 0;
+}
+.signup-panel p {
+  font-size: 13px;
+  font-weight: 200;
+  margin-left: 25%;
+}
+.signup-panel .button {
+  margin-left: 35%;
+}
+  
+
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}  
+.form-signin button[type="submit"] {
+  border-style: solid;
+  border-width: 0px;
+ background: #008cba;
+ border-color: #007095;  
+   -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  transition: background-color 300ms ease-out; 
+} 
+.form-signin button[type="submit"]:hover {
+
+ background: #007097;
+
+}    
+
+.panel > .list-group .list-group-item:first-child {
+    /*border-top: 1px solid rgb(204, 204, 204);*/
+}
+@media (max-width: 767px) {
+    .visible-xs {
+        display: inline-block !important;
+    }
+    .block {
+        display: block !important;
+        width: 100%;
+        height: 1px !important;
+    }
+}
+#back-to-bootsnipp {
+    position: fixed;
+    top: 10px; right: 10px;
+}
+
+
+.c-search > .form-control {
+   border-radius: 0px;
+   border-width: 0px;
+   border-bottom-width: 1px;
+   font-size: 1.3em;
+   padding: 12px 12px;
+   height: 44px;
+   outline: none !important;
+}
+.c-search > .form-control:focus {
+    outline:0px !important;
+    -webkit-appearance:none;
+    box-shadow: none;
+}
+.c-search > .input-group-btn .btn {
+   border-radius: 0px;
+   border-width: 0px;
+   border-left-width: 1px;
+   border-bottom-width: 1px;
+   height: 44px;
+}
+
+
+.c-list {
+    padding: 0px;
+    min-height: 44px;
+}
+.title {
+    display: inline-block;
+    font-size: 1.7em;
+    font-weight: bold;
+    padding: 5px 15px;
+}
+ul.c-controls {
+    list-style: none;
+    margin: 0px;
+    min-height: 44px;
+}
+
+ul.c-controls li {
+    margin-top: 8px;
+    float: left;
+}
+
+ul.c-controls li a {
+    font-size: 1.7em;
+    padding: 11px 10px 6px;   
+}
+ul.c-controls li a i {
+    min-width: 24px;
+    text-align: center;
+}
+
+ul.c-controls li a:hover {
+    background-color: rgba(51, 51, 51, 0.2);
+}
+
+.c-toggle {
+    font-size: 1.7em;
+}
+
+.name {
+    font-size: 1.7em;
+    font-weight: 700;
+}
+
+.c-info {
+    padding: 5px 10px;
+    font-size: 1.25em;
+}    
+.container{
+ margin-left: 0%
+ background:red;
+
+}
+
+
+
+
+   </style>
+    </head>
+    <body>
+  
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+        <form role="form" method="post" action="validarCadastro.php">
+                    
+      <h2>Por favor Cadastre-se <small> É gratuito e sempre será.</small></h2>
+      <hr class="colorgraph">
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+                        <input type="text" name="nome" id="first_name" class="form-control input-lg" placeholder="Name" tabindex="1">
           </div>
-          <div class="row collapse">
-            <div class="small-2 columns">
-              <span class="prefix"><i class="fi-mail"></i></span>
-            </div>
-            <div class="small-10  columns">
-             <input type="text" name="usuario[email]" placeholder="Seu e-mail">
-            </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="text" name="sobrenome" id="last_name" class="form-control input-lg" placeholder="Sobrenome" tabindex="2">
           </div>
-          <div class="row collapse">
-            <div class="small-2 columns">
-              <span class="prefix"><i class="fi-mail"></i></span>
-            </div>
-            <div class="small-10  columns">
-             <input type="password" name="usuario[senha]" placeholder="Sua senha">
-            </div>
-          </div>
-          <button type="submit">Salvar</button>
-        </form>
-        
-          
+        </div>
       </div>
-    </div>
-   </div>        	
+      <div class="form-group">
+        <input type="text" name="username" id="display_name" class="form-control input-lg" placeholder="User name" tabindex="3">
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email" tabindex="4">
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="password" name="senha" id="senha" class="form-control input-lg" placeholder="Password" tabindex="5">
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="password" name="senha_confirmacao" id="senha_cofirma" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+          </div>
+        </div>
+                            
+                            
+      </div>
 
- <% include ../footer %></div>
-   
+      <div class="row">
+        <div class="col-xs-6 col-md-6">
+          <div class="form-group">
+            <input type="text" name="codigo" id="cod" class="form-control input-lg" placeholder="Codigo de Cadastro" tabindex="7" maxlength=3>
+          </div>
+        </div>
+        <div class="col-xs-6  col-md-6" id="erro">
+          <div class="form-group">
+               <br/>
+                                             
+          </div>
+        </div>
+      </div>
+    
 
+      <hr class="colorgraph" id="h">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><input type="submit" value="Registrar" class="btn btn-primary btn-block btn-lg" tabindex="8" name="enviar"></div>
+        <div class="col-xs-6 col-md-6"><a href="/" class="btn btn-success btn-block btn-lg">Logar</a></div>
+      </div>
+                        
+                        
+                        <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6" id="senhaincorreta">
+          <div class="form-group">
+            <br/>
+                                               
+          </div>
+        </div>
+      </div>
+    </form>
+        
+
+                 
+                  
+            
+  </div>
+</div>
+
+    
+  </body>
+</html>

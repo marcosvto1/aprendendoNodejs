@@ -1,27 +1,159 @@
-<% include ../header %>
+<html>
+   
+   <html>
+		 <head>
+		      <meta charset="utf-8">
+		     <title>Ntalk - Agenda de contatos</title>
+		    <!-- <link rel='stylesheet' href='public/css/foundation.css'>
+		     <link rel="stylesheet" href="public/css/normalize.css">-->
+        <link rel="stylesheet" href="public/bootstrap-3.1.1-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="public/bootstrap-3.1.1-dist/css/bootstrap-theme.css">
+        <script src="public/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script> 
+
+		      <style type="text/css">
+            
+            #top{
+
+            padding: 10px;
+            }
+                  #menuContato{
+					background: #eee;
+
+                  }
+                  #menuConteudo{
+					background: green;
+
+                  }
+
+                  #oloco{
+                   
+                  }
+
+                  .chat
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chat li
+{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
+}
+
+.chat li.left .chat-body
+{
+    margin-left: 60px;
+}
+
+.chat li.right .chat-body
+{
+    margin-right: 60px;
+}
 
 
+.chat li .chat-body p
+{
+    margin: 0;
+    color: #777777;
+}
+
+.panel .slidedown .glyphicon, .chat .glyphicon
+{
+    margin-right: 5px;
+}
+
+.panel-body
+{
+    
+}
+
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
 
 
+                  <style type="text/css">
+    body{ margin-top:50px;}
+.nav-tabs .glyphicon:not(.no-margin) { margin-right:10px; }
+.tab-pane .list-group-item:first-child {border-top-right-radius: 0px;border-top-left-radius: 0px;}
+.tab-pane .list-group-item:last-child {border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;}
+.tab-pane .list-group .checkbox { display: inline-block;margin: 0px; }
+.tab-pane .list-group input[type="checkbox"]{ margin-top: 2px; }
+.tab-pane .list-group .glyphicon { margin-right:5px; }
+.tab-pane .list-group .glyphicon:hover { color:#FFBC00; }
+a.list-group-item.read { color: #222;background-color: #F3F3F3; }
+hr { margin-top: 5px;margin-bottom: 10px; }
+.nav-pills>li>a {padding: 5px 10px;}
 
-<p>Bem-vindo <%- usuario.nome %></p>  
-  <p>senha = <%- usuario.senha %></p>
+.ad { padding: 5px;background: #F5F5F5;color: #222;font-size: 80%;border: 1px solid #E5E5E5; }
+.ad a.title {color: #15C;text-decoration: none;font-weight: bold;font-size: 110%;}
+.ad a.url {color: #093;text-decoration: none;}    </style>
+
+
+		      </style>
+                
+		 </head>
+    <body>   
+       <div id="top">
+      	 <nav class="navbar  navbar-inverse" role="navigation">
+ 			 <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+   				  <div class="navbar-header">
+     				 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      				 	 <span class="sr-only">Toggle navigation</span>
+      				 	 <span class="icon-bar"></span>
+     			    	  <span class="icon-bar"></span>
+        				  <span class="icon-bar"></span>
+     				 </button>
+     				 <a class="navbar-brand" href="#">Home</a>
+    			 </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+  			     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      				<ul class="nav navbar-nav">
+      					  <li class="active"><a href="#">Cadastro</a></li>
+     					  <li><a href="#">Link</a></li>
+      
+     				</ul>     
+    
+    			</div><!-- /.navbar-collapse -->
+ 			 </div><!-- /.container-fluid -->
+		</nav>
+
+       </div> <!-- top -->
+
+  <!-- header pra cima-->
 
 <div id="conteudo">
         
-  <div class="container">    
-      <hr/>
-      <div class="row">
-          <div class="col-sm-7 col-md-2">
-              <a href="#" class="btn btn-danger btn-sm btn-block" role="button">Contatos</a>
-             <hr/> 
+	<div class="container">    
+    	<hr/>
+    	<div class="row">
+        	<div class="col-sm-7 col-md-2">
+            	<a href="#" class="btn btn-danger btn-sm btn-block" role="button">Contatos</a>
+             <hr /> 
 
-              <ul class="list-group" id="contact-list"> 
-
-              <% contatos.forEach(function(contato, index) { %>             
+             	<ul class="list-group" id="contact-list">                 
                     <li class="list-group-item">
-                      <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="Scott Stevens" class="img-responsive img-circle"/>
-                         <span class="name">Nome:<%- contato.nome %> </span><br/>    
+                    	<img src="http://api.randomuser.me/portraits/men/49.jpg" alt="Scott Stevens" class="img-responsive img-circle"/>
+                         <span class="name">Nome: Marcos</span><br/>    
                        <div class="col-xs-13 col-sm-9">                                                   
                             <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="5842 Hillcrest Rd"></span>
                             <span class="visible-xs"> <span class="text-muted">5842 Hillcrest Rd</span><br/></span>
@@ -33,15 +165,25 @@
                             <span class="visible-xs"> <span class="text-muted">scott.stevens@example.com</span><br/></span>
                         </div>                   
                         <div class="clearfix"></div>
-                        <a href="/contato/<%- index %>">Detalhes</a>
-                        <a href="/chat">Conversar</a>
-
 
                     </li>
-                    <% }) %>
 
-            
-                         
+                    <li class="list-group-item">
+                    	<img src="http://api.randomuser.me/portraits/men/49.jpg" alt="Scott Stevens" class="img-responsive img-circle"/>
+                         <span class="name">Nome: Marcos</span><br/>    
+                       <div class="col-xs-13 col-sm-9">                                                   
+                            <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="5842 Hillcrest Rd"></span>
+                            <span class="visible-xs"> <span class="text-muted">5842 Hillcrest Rd</span><br/></span>
+                              <span class="glyphicon glyphicon-comment" data-toggle="tooltip" title="conversar"></span>
+                            <span class="visible-xs"> <span class="text-muted">5842 Hillcrest Rd</span><br/></span>
+                           <a href="#"> <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(870) 288-4149"></span></a>
+                            <span class="visible-xs"> <span class="text-muted">(870) 288-4149</span><br/></span>
+                            <span class="glyphicon glyphicon-commento" data-toggle="tooltip" title="scott.stevens@example.com"></span>
+                            <span class="visible-xs"> <span class="text-muted">scott.stevens@example.com</span><br/></span>
+                        </div>
+                   
+                        <div class="clearfix"></div>
+                    </li>               
                    
                 </ul>
         </div>
@@ -49,7 +191,7 @@
  <div class="col-sm-9 col-md-10">
             <!-- Nav tabs -->
      <div class="row" id="oloco">
-            <div class="panel panel-primary">
+          	<div class="panel panel-primary">
                 <div class="panel-heading" id="accordion">
                     <span class="glyphicon glyphicon-comment"></span> Chat
                     <div class="btn-group pull-right">
@@ -135,25 +277,21 @@
       </div> <!-- row -->
  </div> <!-- coluna -->
 
-         </div>  <!-- row container principal -->         
+         </div>  <!-- row container principal -->	        
      </div> <!-- container -->              
                                             
-        
-
-<form action="/contato" method="post">
-    <input type="text" name="contato[nome]" placeholder="Nome">
-    <input type="text" name="contato[email]" placeholder="E-mail">
-    <button type="submit">Cadastrar</button>
-</form>
-
+         
     </div> <!-- conteudo -->
+   
+        <div id="footer">
+          zuera mil graus
+
+       </div> 	
+
+<!-- footer -->
+    </body>
+</html>
 
 
 
-
-
-
-
-
-<% include ../exit %>
-<% include ../footer %>
+</html>

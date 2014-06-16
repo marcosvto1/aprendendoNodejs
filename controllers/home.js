@@ -19,7 +19,17 @@ module.exports = function(app) {
 	    logout: function(req,res){
               req.session.destroy();
               res.redirect('/');
-	     }
+	     },
+      teste: function(req,res){
+
+       //  res.redirect('views/home/teste');
+         res.render('views/home/teste');
+      },
+      criar: function(req,res){
+
+       //  res.redirect('views/home/teste');
+         res.render('views/contatos/cadastro');
+      }
 
 	};
 return HomeController;
